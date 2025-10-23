@@ -22,7 +22,7 @@
 #define PERIPH_BASE            0x40000000U
 #define APB1PERIPH_BASE        PERIPH_BASE
 #define APB2PERIPH_BASE        0x40010000U
-#define AHBPERIPH_BASE         0x40018000U
+#define AHBPERIPH_BASE         0x40020000U
 
 /* base addresses of GPIOx Peripherals */
 
@@ -33,7 +33,7 @@
 
 /* base addresses of RCC Peripheral */
 
-#define RCC_BASEADDR          (AHBPERIPH_BASE+0x1000)
+#define RCC_BASEADDR          (AHBPERIPH_BASE+0x1000U)
 
 /* peripheral register definitions structure  */
 
@@ -61,6 +61,7 @@ typedef struct
 	volatile uint32_t BDCR;
 	volatile uint32_t CSR;
 	volatile uint32_t AHBSTR;
+	volatile uint32_t CFGR2;
 
 } RCC_TypeDef;
 

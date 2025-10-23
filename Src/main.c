@@ -38,6 +38,7 @@ int main(void)
 	GPIOB->CRL |=  (0x8 << 0);  /*CNF0 =10 MODE0=00 for input configuration */
 	GPIOB->ODR &=  ~(1   << 0);  /*ODR0=0 to activate pull down */
 
+
 	while(1)
 	{
 		GPIOA->ODR |= (1<<7);  /*A7 green light is on */
@@ -61,7 +62,7 @@ int main(void)
 }
 void delay_ms(uint32_t ms)
 {
-    for(uint32_t i = 0; i < ms * 1000; i++)
+    for(uint32_t i = 0; i < ms * 500; i++)
     {
         __asm__("nop"); // one CPU no-operation instruction
     }
